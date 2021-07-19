@@ -12,11 +12,16 @@ var taskTaskHandler = function(event) {
         name: taskTypeInput
     };
 
+    // check if input values are empty strings
+    if (!taskNameInput || !taskTypeInput) {
+        alert("You need to fill")
+    }
+    
     // send it as an argument to createTaskEl
     createTaskEl(taskDataObj);    
 };
-  
-  var createTaskEl = function(taskDataObj){
+
+var createTaskEl = function(taskDataObj){
     // create list item
     var listItemEl = document.createElement("li");
     listItemEl.className = "task-item";
